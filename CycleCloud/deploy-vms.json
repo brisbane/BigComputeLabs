@@ -81,6 +81,13 @@
         "description": "SAS key to Cycle License blob"
       }
     },
+    "netResourceGroup": {
+      "maxLength": 32,
+      "type": "string",
+      "metadata": {
+        "description": "Netowrk resource group if different"
+      }
+   },
     "rsaPublicKey": {
       "type": "string",
       "metadata": {
@@ -88,6 +95,7 @@
       }
     }
   },
+
   "variables": {
     "resourceLocation": "[resourceGroup().location]",
     "adminjbvmSize": "[parameters('adminjbvmSize')]",
@@ -106,6 +114,8 @@
 
     "cycleInstallScript": ["[uri(deployment().properties.templateLink.uri, 'cyclecloud_install.sh')]"],
     "cycleInstallCommand": "[concat('bash cyclecloud_install.sh ', parameters('cycleDownloadUri'), ' \"', parameters('cycleLicenseURL'), '\"')]",
+
+    "netResourceGroup": "[parameters('netResourceGroup')]",  
 
     "networkApiVersion": "2017-06-01",
     "computeApiVersion": "2017-03-30"
@@ -180,7 +190,7 @@
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('adminJbIPName'))]"
               },
               "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('admin_subnet'))]"
+                "id": "[resourceId(parameters('netResouceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('admin_subnet'))]"
               },
               "primary": true,
               "privateIPAddressVersion": "IPv4"
@@ -303,7 +313,7 @@
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('cycleIPName'))]"
               },
               "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('cycle_subnet'))]"
+                "id": "[resourceId( parameters('netResouceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('cycle_subnet'))]"
               },
               "primary": true,
               "privateIPAddressVersion": "IPv4"
