@@ -2,15 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
   "parameters": {
-    "vnetName": { "value": "cyclevnet" },
+    "vnetName": { "value": "eunorth.vnet.hpc" },
     "adminJbIPName": { "value": "adminjb_ip" },
     "adminjbvmSize": { "value": "Standard_D2" },
     "adminjbvmStorage": { "value": "Standard_LRS" },
+    "cycle_subnet": { "value": "hpcpoc" },
+    "admin_subnet": { "value": "hpcpoc" },
     "cyclevmSize": { "value": "Standard_D2" },
     "cyclevmStorage": { "value": "Standard_LRS" },
     "cycleIPName": { "value": "cycleserver_ip" },
     "cycleDownloadUri": { "value": "https://cycleclouddownload.blob.core.windows.net/cyclecloud680" },
     "cycleLicenseURL": {"value": "https://cyclecloudlicense.blob.core.windows.net/license/license.dat?se=2018-06-30&sp=r&sv=2017-04-17&sr=b&sig=nCtLPUSjS7PaOcyq8R6IU32KY/LBktQakyKpnxXtXHE%3D"},
-    "rsaPublicKey": { "value": "ssh-rsa <your key>"}
+    "rsaPublicKey": { "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuH330KXtjnAMh+E8eIZgDsODFY8ugojrF3PI3UHjshCwWr7GjhHKB3vUPi47AVpBkiMuCobtBSIho/h5TpcvJHxs89bF2AbYYsiAK3ybkS+y5HsHaMsaRnDKcRnxwz+1WPe6UGRwiT7N6swxHwHVSOGxHqq4bPf/Zy9xOc4xcnIhOUQeWjUiswbNLwY5O+vEnji0ToYQfLMH96Quu9rApLnzcg370ODejXp38nlOWmeVfW9ZLAtNT+PsosEK2AxkN438hQNPNc3Z/dpg8VtA0lkmjVRV5GJjJPM8twieQROyrhiaPbp04d9UHW7LTIL3DHIjorLQE4iHZyv2m9oTqQ== sean.brisbane@dublxglp02"}
   }
 }

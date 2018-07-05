@@ -44,6 +44,22 @@
         "description": "Type of storage for the Cycle VM: Premium_LRS or Standard_LRS"
       }
     },
+    "admin_subnet": {
+      "maxLength": 32,
+      "type": "string",
+      "defaultValue": "admin",
+      "metadata": {
+        "description": "Name of admin subnet"
+      }
+    },
+    "cycle_subnet": {
+      "maxLength": 32,
+      "type": "string",
+      "defaultValue": "cycle",
+      "metadata": {
+        "description": "Name of cycle subnet"
+      }
+    },
     "cycleIPName": {
       "maxLength": 32,
       "type": "string",
@@ -79,14 +95,14 @@
     "adminjbName": "adminjb",
     "adminjbNic": "adminjb-nic",
     "admin_nsg_name": "admin-nsg",
-    "admin_subnet": "admin",
+    "admin_subnet": "[parameters('admin_subnet')]",
 
     "cyclevmSize": "[parameters('cyclevmSize')]",
     "cyclevmStorage": "[parameters('cyclevmStorage')]",
     "cycleName": "cycleserver",
     "cycleNic": "cycle-nic",
     "cycle_nsg_name": "cycle-nsg",
-    "cycle_subnet": "cycle",
+    "cycle_subnet": "[parameters('cycle_subnet')]",
 
     "cycleInstallScript": ["[uri(deployment().properties.templateLink.uri, 'cyclecloud_install.sh')]"],
     "cycleInstallCommand": "[concat('bash cyclecloud_install.sh ', parameters('cycleDownloadUri'), ' \"', parameters('cycleLicenseURL'), '\"')]",
