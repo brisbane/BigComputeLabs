@@ -8,6 +8,7 @@
     "adminjbvmStorage": { "value": "Standard_LRS" },
     "cycle_subnet": { "value": "hpcpoc" },
     "admin_subnet": { "value": "hpcpoc" },
+    "netResourceGroup": { "value": "rg.network.hpc" },
     "cyclevmSize": { "value": "Standard_D2" },
     "cyclevmStorage": { "value": "Standard_LRS" },
     "cycleIPName": { "value": "cycleserver_ip" },
