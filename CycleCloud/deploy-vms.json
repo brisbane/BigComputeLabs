@@ -313,7 +313,7 @@
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('cycleIPName'))]"
               },
               "subnet": {
-                "id": "[resourceId( parameters('netResouceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('cycle_subnet'))]"
+                "id": "[resourceId( parameters('netResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('vnetName'), variables('cycle_subnet'))]"
               },
               "primary": true,
               "privateIPAddressVersion": "IPv4"
