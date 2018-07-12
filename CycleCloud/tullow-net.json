@@ -71,6 +71,21 @@
             }
           },
           {
+            "name": "default-allow-ssh-tullow",
+            "properties": {
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "89.101.132.50/32",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2010,
+              "direction": "Inbound",
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
             "name": "AllowCyclePortalInBound",
             "properties": {
               "protocol": "Tcp",
